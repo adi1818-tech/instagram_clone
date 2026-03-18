@@ -1,0 +1,191 @@
+/* GLOBAL */
+
+body{
+    background:#fafafa;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    margin:0;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:65px;
+    background:white;
+    border-bottom:1px solid #dbdbdb;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 40px;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    background:linear-gradient(45deg,#f58529,#feda77,#dd2a7b,#8134af,#515bd4);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#262626;
+    font-weight:500;
+    margin-left:25px;
+}
+
+.nav-links a:hover{
+    color:#0095f6;
+}
+
+/* MAIN FEED */
+
+.container{
+    width:470px;
+    margin:auto;
+    margin-top:30px;
+}
+
+/* UPLOAD POST BOX */
+
+.upload-box{
+    background:white;
+    border:1px solid #dbdbdb;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:25px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+
+.upload-box input{
+    padding:8px;
+    margin-right:10px;
+}
+
+.upload-box button{
+    background:#0095f6;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.upload-box button:hover{
+    background:#0074cc;
+}
+
+/* POST CARD */
+
+.post{
+    background:white;
+    border:1px solid #dbdbdb;
+    border-radius:10px;
+    margin-bottom:30px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* POST HEADER */
+
+.post-header{
+    display:flex;
+    align-items:center;
+    padding:12px;
+}
+
+.profile-pic{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
+    margin-right:10px;
+}
+
+.username{
+    font-weight:bold;
+}
+
+/* IMAGE */
+
+.post img{
+    width:100%;
+    display:block;
+}
+
+/* ACTION ICONS */
+
+.actions{
+    padding:10px;
+    font-size:22px;
+}
+
+.actions a{
+    text-decoration:none;
+    margin-right:15px;
+}
+
+.actions a:hover{
+    transform:scale(1.1);
+}
+
+/* LIKE COUNT */
+
+.likes{
+    font-weight:bold;
+    padding:0 12px;
+}
+
+/* CAPTION */
+
+.caption{
+    padding:5px 12px;
+}
+
+/* COMMENTS */
+
+.comments{
+    padding:5px 12px;
+    color:#444;
+}
+
+/* COMMENT BOX */
+
+.comment-box{
+    border-top:1px solid #efefef;
+    display:flex;
+    padding:10px;
+}
+
+.comment-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    font-size:14px;
+}
+
+.comment-box button{
+    border:none;
+    background:none;
+    color:#0095f6;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.comment-box button:hover{
+    color:#0056a6;
+}
+
+/* DELETE BUTTON */
+
+.post a[href*="delete"]{
+    color:red;
+    font-size:14px;
+    padding-left:12px;
+}
+
+/* HOVER EFFECT */
+
+.post:hover{
+    transform:scale(1.01);
+    transition:0.2s;
+}

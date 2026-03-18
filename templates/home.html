@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Instagram Clone</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">Instagram</div>
+
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="upload-box">
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="file" name="image">
+
+<input type="text" name="caption" placeholder="Write caption">
+
+<button type="submit">Post</button>
+
+</form>
+
+</div>
+
+{% for post in posts %}
+
+<div class="post">
+
+<div class="post-header">
+
+<div class="profile-pic"></div>
+
+<div class="username">user</div>
+
+</div>
+
+<img src="{{ url_for('static', filename='uploads/' + post.image) }}">
+
+<div class="actions">
+
+<a href="/like/{{ post.id }}">❤️</a>
+<span>💬</span>
+<span>📤</span>
+
+</div>
+
+<div class="likes">
+
+❤️ {{ likes[post.id] }} likes
+
+</div>
+
+<div class="caption">
+
+{{ post.caption }}
+
+</div>
+
+<a href="/delete/{{ post.id }}">🗑 Delete Post</a>
+
+<div class="comments">
+
+<h4>Comments</h4>
+
+{% for comment in comments[post.id] %}
+
+<p>{{ comment.text }}</p>
+
+{% endfor %}
+
+</div>
+
+<form class="comment-box" action="/comment/{{ post.id }}" method="POST">
+
+<input name="comment" placeholder="Add comment">
+
+<button>Post</button>
+
+</form>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+
+</html>
