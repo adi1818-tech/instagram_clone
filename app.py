@@ -8,6 +8,8 @@ app.config['SECRET_KEY'] = 'secret'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 
+os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
+
 db.init_app(app)
 
 current_user = None
@@ -140,8 +142,9 @@ def login():
     return render_template("login.html")
 
 
-if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
+with app.app_context():
+    db.create_all()
 
-    app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
